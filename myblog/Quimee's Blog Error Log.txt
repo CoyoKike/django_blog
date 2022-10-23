@@ -1,0 +1,24 @@
+Quimee's Blog Error log
+
+
+Dropdown Menu out of the line and in blue letter:
+
+Solution:
+Make sure that the button class is set to: "nav-link dropdown-toggle"
+
+e.g.:
+             <div class="dropdown">
+             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
+
+
+Dropdown menu not loading options: 
+
+Solution:
+
+Change data-bs-toggle="dropdown" to data-toggle="dropdown"
+
+e.g.:
+
+
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="dLabel">
+

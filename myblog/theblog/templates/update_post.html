@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+{% if user.id == post.author.id %}
+
+<h1> Update Post...</h1>
+<br />
+<hr>
+<br />
+<div class="form-group">
+    <form method="POST">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ form.media }}
+
+
+        <button class="btn btn-info">Update</button>
+</div>
+{% else %}
+You're not allowed here!
+
+{% endif %}
+{% else %}
+
+You're not allowed here!
+
+{% endif %}
+
+
+
+{% endblock %}

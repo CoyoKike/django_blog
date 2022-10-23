@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} Add Post {% endblock title %}
+{% block content %}
+
+{% if user.is_authenticated %}
+{% if user.id == profile.user.id %}
+<h1>Update Profile</h1>
+<br />
+<hr>
+<br />
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button class="btn btn-info">Update Profile</button>
+
+
+        {% else %}
+
+        You are not allowed here!
+
+        {% endif %}
+
+        {% else %}
+        You cannot edit this
+        {% endif %}
+
+        {% endblock %}
